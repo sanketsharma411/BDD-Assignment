@@ -19,8 +19,7 @@ class Calculator(object):
     def volume(self, l, h, b):
         number_types = (int, long, float, complex)
         if isinstance(l, number_types) and isinstance(h, number_types) and isinstance(b, number_types):
-            #TODO compute volume here
-            return 0
+            return l * h * b
         else:
             raise ValueError
 
@@ -29,12 +28,9 @@ class Calculator(object):
         number_types = (int, long)
  
         if isinstance(n, number_types):
-            if n < 0:
-                return None
+            if n <= 0:
+                return 1
             else:
-                #TODO compute factorial here
-                return 0
+                return n*self.factorial(n-1)
         else:
             raise ValueError
-
-    
